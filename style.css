@@ -1,10 +1,15 @@
-/* --- Global Styles --- */
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- Colorful Dark Mode Palette --- */
 :root {
-    --primary-color: #007BFF; /* A nice blue */
-    --secondary-color: #f4f4f4; /* Light gray background */
-    --text-color: #333;
-    --heading-font: 'Arial', sans-serif;
-    --body-font: 'Georgia', serif;
+    --primary-color: #00bfa5; /* Bright, modern teal/cyan */
+    --secondary-color: #333; /* Content card background */
+    --bg-color: #1f1f1f; /* Main background */
+    --text-color: #e0e0e0; /* Light gray text */
+    --heading-color: #ffffff; /* White headings */
+    --nav-bg: #2a2a2a; /* Nav bar background */
+    --border-color: #444;
 }
 
 html {
@@ -12,187 +17,144 @@ html {
 }
 
 body {
-    font-family: var(--body-font);
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
     color: var(--text-color);
-    background-color: #fff;
+    background-color: var(--bg-color);
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
-h1, h2, h3 {
-    font-family: var(--heading-font);
+h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
+    color: var(--heading-color);
     margin-bottom: 1rem;
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-section {
-    padding: 60px 0;
-    text-align: center;
+a:hover {
+    color: #008f7a; /* Darker teal on hover */
 }
 
-/* --- Header & Navigation --- */
+/* --- Main Navigation Bar --- */
 header {
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    position: fixed;
+    background: var(--nav-bg);
+    border-bottom: 2px solid var(--primary-color);
     width: 100%;
+    position: fixed;
     top: 0;
     z-index: 1000;
 }
 
-header nav {
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--heading-color);
 }
 
-header ul {
+.main-nav ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-header li {
-    margin-left: 20px;
+.main-nav li {
+    margin-left: 25px;
 }
 
-header a {
-    font-family: var(--heading-font);
+.main-nav a {
+    font-size: 1rem;
     font-weight: 600;
+    color: var(--text-color);
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-/* --- Hero Section --- */
-#hero {
-    background-color: var(--secondary-color);
-    min-height: 400px;
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Main Content Area --- */
+main {
+    padding-top: 100px; /* Offset for fixed header */
+}
+
+.content-card {
+    background: var(--secondary-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+}
+
+/* --- FOR WORK.HTML: Tabbed Navigation --- */
+.tab-navigation {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 70px; /* Offset for fixed header */
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 30px;
 }
 
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-#hero .subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-}
-
-.cta-button {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-family: var(--heading-font);
+.tab-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* Aligns with the border */
 }
 
-.cta-button:hover {
-    background-color: #0056b3; /* Darker blue */
+.tab-button:hover {
+    color: var(--heading-color);
 }
 
-/* --- About Section --- */
-.profile-pic {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 1.5rem;
-    border: 3px solid var(--primary-color);
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
 }
 
-#about p {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+.tab-content {
+    display: none; /* Hidden by default */
 }
 
-/* --- Skills Section --- */
-/* This section uses the .project-grid styles, so no extra CSS is needed! */
-
-/* --- Projects Section --- */
-#projects {
-    background-color: var(--secondary-color);
+.tab-content.active {
+    display: block; /* Shown when active */
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 2rem;
-    text-align: left;
-}
-
-.project-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-
-.project-card img {
+/* --- FOR RESUME.HTML: PDF Embed --- */
+.resume-embed {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-card h3, .project-card p, .project-card a {
-    padding: 0 20px;
-}
-
-.project-card h3 {
-    margin-top: 15px;
-}
-
-.project-card a {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* --- Contact Section --- */
-#contact p {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
-}
-
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
+    height: 1000px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
