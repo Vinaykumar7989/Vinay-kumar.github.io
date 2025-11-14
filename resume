@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume - Bandi Vinay Kumar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Bandi Vinay Kumar</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="resume.html" class="active">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content-card">
+                <h2>My Resume</h2>
+                <p>You can view my full resume embedded below or download it directly.</p>
+                <embed src="vinay_resume_new.pdf" type="application/pdf" class="resume-embed">
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
